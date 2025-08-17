@@ -1,6 +1,7 @@
 package org.example.financetracker.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,7 +9,11 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table (name= "entry_db")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Entry {
+
+
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -24,18 +29,6 @@ public class Entry {
 
     @Column(name="Date")
     private String date;
-
-    public Entry(int id, String name, double amount, String date) {
-        this.id = id;
-        this.name = name;
-        this.amount = amount;
-        this.date = date;
-    }
-
-    public Entry() {
-
-    }
-
 
 
     @Override
